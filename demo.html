@@ -4,32 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Editor</title>
-  <style type="text/css" media="screen">
-    body {
-        overflow: hidden;
-    }
-    
-    #editor { 
-        margin: 0;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    #statusBar {
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 20px;
-        background-color: #353531;
-        color: #D8D8D8;
-        z-index: 90;  
-    }
-  </style>
+  <link rel="stylesheet" href="lib/ui/layout.css">
 </head>
 <body>
 
@@ -51,6 +26,7 @@ require(["ace/ace", "ace/ext/settings_menu", "ace/ext/statusbar"], function(ace)
 
     ace.require('ace/ext/settings_menu').init(editor);
     editor.setTheme("ace/theme/Monokai");
+    editor.setShowPrintMargin(false);
     editor.session.setMode("ace/mode/html");
 	editor.commands.addCommands([{
 		name: "showSettingsMenu",
@@ -65,7 +41,9 @@ require(["ace/ace", "ace/ext/settings_menu", "ace/ext/statusbar"], function(ace)
         // console.log(editor.session.getTextRange(editor.getSelectionRange()))
         console.log(editor.insert("Something cool"))
     }
-
+    document.querySelector('.code-mod').onclick = function val() {
+        console.log(editor.getValue())
+    }
     document
 })
 </script>

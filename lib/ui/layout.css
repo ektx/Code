@@ -1,0 +1,27 @@
+body {
+    overflow: hidden;
+}
+
+#editor { 
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#statusBar {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    background-color: #353531;
+    font-size: 12px;
+    line-height: 20px;
+    color: #D8D8D8;
+    z-index: 90;  
+
+}
